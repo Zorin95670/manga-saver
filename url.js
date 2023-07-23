@@ -27,10 +27,10 @@ export function getIdFromUrl(url) {
 }
 
 export function getChapterFromUrl(url) {
-  const chapter = url.match(/(\d+)(?!.*\d)/);
+  const chapter = url.match(/(\d+(-\d+)?)\/?$/);
 
   if (chapter) {
-    return parseInt(chapter[1], 10);
+    return parseFloat(chapter[1].replace('-', '.'));
   }
 
   return null;

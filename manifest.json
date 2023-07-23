@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Manga saver",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Chrome extension to save your progress when you read manga/webtoon online!",
   "background": {
     "service_worker": "background.js",
