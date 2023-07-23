@@ -74,3 +74,15 @@ export function saveBookmark(name, url) {
     })
   });
 }
+
+export function getData() {
+  return new Promise((resolve) => {
+    chrome.storage.sync.get(['key'], (result) => {
+      resolve(JSON.stringify(
+        result.key,
+        (key, value) => (value === null ? undefined : value),
+        2,
+      ));
+    });
+  });
+}
