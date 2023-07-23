@@ -1,0 +1,23 @@
+{
+  "name": "manga-saver",
+  "version": "1.0.0",
+  "description": "Chrome extension to save your progress when you read manga/webtoon online!",
+  "main": "webpack.config.js",
+  "productName": "Manga saver",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zorin95670/manga-saver.git"
+  },
+  "keywords": [
+    "manga-saver",
+    "chrome-extension",
+    "manga",
+    "webtoon"
+  ],
+  "author": "Vincent Moittie <moittie.vincent@gmail.com>",
+  "license": "Mozilla Public License 2.0",
+  "bugs": {
+    "url": "https://github.com/Zorin95670/manga-saver/issues"
+  },
+  "homepage": "https://github.com/Zorin95670/manga-saver#readme"
+}
