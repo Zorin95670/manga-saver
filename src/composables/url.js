@@ -1,6 +1,6 @@
 export function getCurrentTabUrl() {
   return new Promise((resolve) => {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (tabs.length > 0) {
         resolve(tabs[0].url);
       }
@@ -8,14 +8,8 @@ export function getCurrentTabUrl() {
   });
 }
 
-export function getOriginFromUrl(url) {
-  const origin = url.match(/^(https?:\/\/[^/]+)/);
-
-  return origin ? origin[1] : null;
-}
-
 export function getNameFromUrl(url) {
-  const name = url.match(/https:\/\/[^/]+\/[^/]+\/([^/]+)/);
+  const name = /https:\/\/[^/]+\/[^/]+\/([^/]+)/.exec(url);
 
   return name ? name[1] : null;
 }
@@ -27,11 +21,15 @@ export function getIdFromUrl(url) {
 }
 
 export function getChapterFromUrl(url) {
-  const chapter = url.match(/(\d+(-\d+)?)\/?$/);
+  const chapter = /(\d+(-\d+)?)\/?$/.exec(url);
 
   if (chapter) {
     return parseFloat(chapter[1].replace('-', '.'));
   }
 
   return null;
+}
+
+export function openUrl(url) {
+  chrome.tabs.create({ url });
 }
